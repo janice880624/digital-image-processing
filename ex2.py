@@ -7,7 +7,7 @@ def test():
         if cv2.waitKey(1) & 0xFF == ord('q'):
             print('I am done')
             cv2.destroyAllWindows()
-            break;
+            break
 
 if __name__ == '__main__':
     test()
