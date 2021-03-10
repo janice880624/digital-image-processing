@@ -6,10 +6,11 @@ print(img.size) # total no. of pixels
 print(img.dtype) # image dadatype
 
 b,g,r = cv2.split(img)
-img = cv2.merge((b,g,r))
+img = cv2.merge((r,g,b))
 
 ball = img[280:340, 330:390] # ROI
-img[273:333, 100:160] =ball
+#img[206:266, 60:120] =ball
+img[20:80, 206:266] =ball
 
 cv2.imshow('photo_vodeo/image',img)
 cv2.waitKey(0)
