@@ -16,14 +16,14 @@ switch = '0 : OFF\n 1 : ON'
 cv.createTrackbar(switch, 'image', 0, 1, nothing)
 
 while(1):
-    cv.imshow('image',img)
+    cv.imshow('photo_vodeo/image',img)
     k = cv.waitKey(1) & 0xFF
     if k == 27: # esc key
         break
-    b = cv.getTrackbarPos('B', 'image')
-    g = cv.getTrackbarPos('G', 'image')
-    r = cv.getTrackbarPos('R', 'image')
-    s = cv.getTrackbarPos(switch, 'image')
+    b = cv.getTrackbarPos('B', 'photo_vodeo/image')
+    g = cv.getTrackbarPos('G', 'photo_vodeo/image')
+    r = cv.getTrackbarPos('R', 'photo_vodeo/image')
+    s = cv.getTrackbarPos(switch, 'photo_vodeo/image')
 
     if s == 0:
         img[:] = 0
