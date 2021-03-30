@@ -1,11 +1,15 @@
 import cv2
 
-cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-cap = cv2.VideoCapture('vtest.avi')
+# 開啟攝像頭
+cap = cv2.VideoCapture(0, cv2.CAP_DSHOW) #0為電腦內建攝像頭
 
-width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-fps = int(cap.get(cv2.CAP_PROP_FPS))
+# cap = cv2.VideoCapture('vtest.avi')
+
+width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)) # 寬度
+height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)) # 高度
+fps = int(cap.get(cv2.CAP_PROP_FPS)) # 速度
+
+# 保存
 codec = cv2.VideoWriter_fourcc(*'XVID')
 out = cv2.VideoWriter('output.avi', codec, 20.0, (width, height))
 
@@ -14,6 +18,7 @@ print(cap.isOpened()) # True
 while (cap.isOpened()):
     ret, frame = cap.read()
     if ret == True:
+
         # print(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
         # print(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
         print('width:{} height:{}'.format(cap.get(cv2.CAP_PROP_FRAME_WIDTH), cap.get(cv2.CAP_PROP_FRAME_HEIGHT)))

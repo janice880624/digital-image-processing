@@ -15,8 +15,13 @@ img3 = cv2.imread('photo_video/lena.jpg', -1)
 print(img3.shape)
 # (512, 512, 3)
 
+# 建立視窗
 cv2.imshow('photo_video/lena image', img)
+
+# 0 -> 持續等待至使用者按下任意按鍵時結束
 cv2.waitKey(0)
+
+# 關閉所有視窗
 cv2.destroyAllWindows()
 
 cv2.imwrite('photo_video/lena_copy.png', img)
