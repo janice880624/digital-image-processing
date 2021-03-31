@@ -14,6 +14,9 @@ ScharrY = cv2.Scharr(img, cv2.CV_64F, 0, 1)
 sobelX = np.uint8(np.absolute(sobelX))
 sobelY = np.uint8(np.absolute(sobelY))
 
+ScharrX = np.uint8(np.absolute(sobelX))
+ScharrY = np.uint8(np.absolute(sobelY))
+
 sobelCombined_1 = cv2.bitwise_or(sobelX, sobelY)
 sobelCombined_2 = cv2.addWeighted(sobelX, 0.5, sobelY, 0.5, 0)
 
