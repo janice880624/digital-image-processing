@@ -9,7 +9,7 @@ def click_event(event, x, y, flags, param):
         cv2.circle(img, (x, y), 3, (0, 0, 255), -1)
         cv2.imshow('photo_vodeo/image', img)
         mycolorImage = np.zeros((512, 512, 3), np.uint8) # black image
-        mycolorImage[:] = [blue, gre    en, red]
+        mycolorImage[:] = [blue, green, red]
         cv2.imshow('photo_vodeo/color',mycolorImage)
 
 img = cv2.imread('photo_vodeo/lena.jpg')

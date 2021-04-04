@@ -14,14 +14,22 @@ ScharrY = cv2.Scharr(img, cv2.CV_64F, 0, 1)
 sobelX = np.uint8(np.absolute(sobelX))
 sobelY = np.uint8(np.absolute(sobelY))
 
-ScharrX = np.uint8(np.absolute(sobelX))
-ScharrY = np.uint8(np.absolute(sobelY))
+ScharrX = np.uint8(np.absolute(ScharrX))
+ScharrY = np.uint8(np.absolute(ScharrY))
 
 sobelCombined_1 = cv2.bitwise_or(sobelX, sobelY)
 sobelCombined_2 = cv2.addWeighted(sobelX, 0.5, sobelY, 0.5, 0)
 
 Scharr_1 = cv2.bitwise_or(ScharrX, ScharrY)
 Scharr_2 = cv2.addWeighted(ScharrX, 0.5, ScharrY, 0.5, 0)
+
+titles = ['sobel_bitwise_or', 'sobel_addWeighted', 'Scharr_bitwise_or', 'Scharr_addWeighted']
+images = [sobelCombined_1, sobelCombined_2, Scharr_1, Scharr_2]
+for i in range(4):
+   plt.subplot(2, 2, i+1), plt.imshow(images[i], 'gray')
+   plt.title(titles[i])
+   plt.xticks([]),plt.yticks([])
+plt.show()
 
 #titles = ['image', 'Laplacian', 'sobelX', 'sobelY', 'sobelCombined']
 #images = [img, lap, sobelX, sobelY, sobelCombined]
