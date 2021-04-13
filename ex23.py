@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 img = cv2.imread("photo_video/messi5.jpg", cv2.IMREAD_GRAYSCALE)
 lap = cv2.Laplacian(img, cv2.CV_64F, ksize=3)
 lap = np.uint8(np.absolute(lap))
+
 sobelX = cv2.Sobel(img, cv2.CV_64F, 1, 0)
 sobelY = cv2.Sobel(img, cv2.CV_64F, 0, 1)
 
@@ -16,6 +17,10 @@ sobelY = np.uint8(np.absolute(sobelY))
 
 ScharrX = np.uint8(np.absolute(ScharrX))
 ScharrY = np.uint8(np.absolute(ScharrY))
+
+# sobel 與 scharr 大小一樣，因此計算量一樣
+# scharr 算子可以計算出更小的梯度變化，也因臨近像素的權重更大，故精準度更高
+# -------------------------------- #
 
 sobelCombined_1 = cv2.bitwise_or(sobelX, sobelY)
 sobelCombined_2 = cv2.addWeighted(sobelX, 0.5, sobelY, 0.5, 0)
