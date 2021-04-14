@@ -7,7 +7,7 @@ lap = cv2.Laplacian(img, cv2.CV_64F, ksize=3)
 lap = np.uint8(np.absolute(lap))
 sobelX = cv2.Sobel(img, cv2.CV_64F, 1, 0)
 sobelY = cv2.Sobel(img, cv2.CV_64F, 0, 1)
-edges = cv2.Canny(img,100,200)
+canny = cv2.Canny(img,100,200)
 
 sobelX = np.uint8(np.absolute(sobelX))
 sobelY = np.uint8(np.absolute(sobelY))
