@@ -1,6 +1,7 @@
 import cv2
 #開啟攝像頭 => 第一隻
 #cv2.CAP_DSHOW => microsoft 特有的用於防止釋放 camera 時的 warn
+
 # cap = cv2.VideoCapture(0, cv2.CAP_DSHOW) #0為電腦內建攝像頭
 cap = cv2.VideoCapture(0) 
 # cap = cv2.VideoCapture('photo_video/vtest.avi')
