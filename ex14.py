@@ -8,6 +8,8 @@ def nothing(x):
 img = np.zeros((300,512,3), np.uint8)
 cv.namedWindow('photo_video/image')
 
+# 使用滑動條
+# cv2.createTrackbar(名稱, 視窗名稱, 滑桿最小值, 滑桿最大值, 回調韓式)
 cv.createTrackbar('B', 'photo_video/image', 0, 255, nothing)
 cv.createTrackbar('G', 'photo_video/image', 0, 255, nothing)
 cv.createTrackbar('R', 'photo_video/image', 0, 255, nothing)

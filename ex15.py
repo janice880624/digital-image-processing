@@ -7,6 +7,7 @@ cv.namedWindow('photo_video/image')
 
 cv.createTrackbar('CP', 'photo_video/image', 0, 255, nothing)
 
+# cv2.createTrackbar(名稱, 視窗名稱, 滑桿最小值, 滑桿最大值, 回調函式)
 switch = 'color/gray'
 cv.createTrackbar(switch, 'photo_video/image', 0, 1, nothing)
 
@@ -20,6 +21,7 @@ while(1):
     k = cv.waitKey(1) & 0xFF
     if k == 27:
         break
+    
     s = cv.getTrackbarPos(switch, 'photo_video/image')
 
     if s == 0:

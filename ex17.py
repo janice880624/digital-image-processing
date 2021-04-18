@@ -1,10 +1,11 @@
 import cv2
 import numpy as np
 
+# cap = cv2.VideoCapture(0, cv2.CAP_DSHOW) #0為電腦內建攝像頭
+cap = cv2.VideoCapture(0)
+
 def nothing(x):
     pass
-
-cap = cv2.VideoCapture(0, cv2.CAP_DSHOW);
 
 cv2.namedWindow("Tracking")
 cv2.createTrackbar("LH", "Tracking", 0, 255, nothing)
@@ -31,6 +32,9 @@ while True:
     l_b = np.array([l_h, l_s, l_v])
     u_b = np.array([u_h, u_s, u_v])
 
+    # mask = cv2.inRange(hsv, lower_red, upper_red)
+    # lower_red 指的是圖像中低於這個 lower_red 的值，圖像值變為 0
+    # upper_red 指的是圖像中高於這個 upper_red 的值，圖像值變為 0
     mask = cv2.inRange(hsv, l_b, u_b)
 
     res = cv2.bitwise_and(frame, frame, mask=mask)

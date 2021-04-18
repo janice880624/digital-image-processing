@@ -28,8 +28,12 @@ while True:
     l_b = np.array([l_h, l_s, l_v])
     u_b = np.array([u_h, u_s, u_v])
 
+    # mask = cv2.inRange(hsv, lower_red, upper_red)
+    # lower_red 指的是圖像中低於這個 lower_red 的值，圖像值變為 0
+    # upper_red 指的是圖像中高於這個 upper_red 的值，圖像值變為 0
     mask = cv2.inRange(hsv, l_b, u_b)
 
+    # 將遮罩印在原來的圖片上，有點像挖空的感覺
     res = cv2.bitwise_and(frame, frame, mask=mask)
 
     cv2.imshow("frame", frame)
