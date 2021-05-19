@@ -26,34 +26,38 @@ def process(image):
     width = image.shape[1]
     region_of_interest_vertices = [
         (0, height),
-        (width/2, height*3/4),
+        (width/2, height/2),
         (width, height)
     ]
     gray_image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-    canny_image = cv2.Canny(gray_image, 100, 200)
+    canny_image = cv2.Canny(gray_image, 50, 150)
     cropped_image = region_of_interest(canny_image, np.array([region_of_interest_vertices], np.int32),)
     lines = cv2.HoughLinesP(cropped_image,
-                            rho=2,
+                            rho=1,
                             theta=np.pi/180,
-                            threshold=50,
+                            threshold=40,
                             lines=np.array([]),
-                            minLineLength=40,
-                            maxLineGap=100)
+                            minLineLength=100,
+                            maxLineGap=10)
     image_with_lines = drow_the_lines(image, lines)
     return image_with_lines
 
 cap = cv2.VideoCapture('../photo_video/hw1.mp4')
 
-while cap.isOpened():
+while (cap.isOpened()):
     ret, frame = cap.read()
-    if frame is None: 
-        continue
+    if ret == True:
+        if frame is None:
+            continue
+        else:
+            frame = process(frame)
+            cv2.imshow('frame', frame)
+            time.sleep(0.034)
+
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
     else:
-        frame = process(frame)
-        cv2.imshow('frame', frame)
-        time.sleep(0.034)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+        break
 
 cap.release()
 cv2.destroyAllWindows()
