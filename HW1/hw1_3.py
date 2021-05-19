@@ -18,3 +18,5 @@ for pt in zip(*loc[::-1]):
 cv2.imshow("img", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+cv2.imwrite('template matching.jpg', img)

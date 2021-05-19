@@ -13,5 +13,4 @@ crop_img = img[y:y+h, x:x+w]
 cv2.imshow("cropped", crop_img)
 cv2.waitKey(0)
 
-# 寫入圖檔
 cv2.imwrite('ball_cut.jpg', crop_img)
