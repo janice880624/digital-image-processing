@@ -26,18 +26,18 @@ def process(image):
     width = image.shape[1]
     region_of_interest_vertices = [
         (0, height),
-        (width/2, height/2),
+        (width/2, height*2/3),
         (width, height)
     ]
     gray_image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-    canny_image = cv2.Canny(gray_image, 50, 150)
+    canny_image = cv2.Canny(gray_image, 120, 150)
     cropped_image = region_of_interest(canny_image, np.array([region_of_interest_vertices], np.int32),)
     lines = cv2.HoughLinesP(cropped_image,
                             rho=1,
                             theta=np.pi/180,
-                            threshold=40,
+                            threshold=35,
                             lines=np.array([]),
-                            minLineLength=100,
+                            minLineLength=40,
                             maxLineGap=10)
     image_with_lines = drow_the_lines(image, lines)
     return image_with_lines
