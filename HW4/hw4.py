@@ -26,10 +26,9 @@ gray = get_grayscale(img)
 thresh = thresholding(gray)
 blur = remove_noise(thresh)
 
-# cv.imshow('img', img)
-# cv.imshow('gray', gray)
-# cv.imshow('thresh', thresh)
-# cv.imshow('blur', blur)
+cv.imwrite('gray_output.jpg', gray)
+cv.imwrite('thresh_output.jpg', thresh)
+cv.imwrite('blur_output.jpg', blur)
 cv.imwrite('output.jpg', blur)
 
 text_tesseract = pytesseract.image_to_string(blur)

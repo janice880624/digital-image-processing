@@ -26,4 +26,10 @@ https://github.com/janice880624/digital-image-processing/blob/main/HW4/muggle.py
 
 step1. 將兩種方法得出的結果儲存為陣列
 
+tesseract_list: ['2', '1', '9', '9', 'Q', 'D']
+
+muggle_list: ['2', '7', '9', '9', 'q', 'd']
+
 step2. 透過元素的對比得出結果
+
+['2', '7', '9', '9', 'Q', 'D']
