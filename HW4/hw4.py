@@ -48,7 +48,6 @@ for i in text_muggle:
   if (i.isalnum()==True):
     muggle_list.append(i)
 
-
 print('tesseract_list:', tesseract_list)
 print('muggle_list:', muggle_list)
 
