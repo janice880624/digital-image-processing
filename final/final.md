@@ -1,5 +1,8 @@
 # HW4
 ## 方法一 CamShift
+
+https://youtu.be/wJXv6AJMsnM
+
 ### main code
 https://github.com/janice880624/digital-image-processing/blob/main/final/final.py
 
@@ -20,6 +23,9 @@ https://github.com/janice880624/digital-image-processing/blob/main/final/range.p
 ---
 
 ## 方法二
+
+https://youtu.be/SPKDw3yxa3U
+
 ### main code
 https://github.com/janice880624/digital-image-processing/blob/main/final/MOG2.py
 
