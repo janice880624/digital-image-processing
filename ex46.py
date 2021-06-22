@@ -33,10 +33,12 @@ while(1):
 
     cv.imshow('dst', dst)
     cv.imshow('final_image',final_image)
+    cv.imshow('fhsv_roi',hsv_roi)
+    
     k = cv.waitKey(30) & 0xff
     if k == 27:
         break
   else:
       break
 cap.release()
-cv.detroyAllWindows()
+cv.destroyAllWindows()
