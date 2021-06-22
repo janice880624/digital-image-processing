@@ -21,7 +21,7 @@ https://github.com/janice880624/digital-image-processing/blob/main/final/range.p
 
 ## 方法二
 ### main code
-https://github.com/janice880624/digital-image-processing/blob/main/final/.py
+https://github.com/janice880624/digital-image-processing/blob/main/final/MOG2.py
 
 step.1 cv2.getStructureElement 構造形態學的卷積) 
 
